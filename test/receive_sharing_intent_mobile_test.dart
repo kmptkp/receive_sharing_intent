@@ -22,8 +22,8 @@ void main() {
 
   test('getInitialMedia', () async {
     final expectedMediaFiles = [
-      SharedMediaFile(path: 'path1', type: SharedMediaType.image),
-      SharedMediaFile(path: 'path2', type: SharedMediaType.video),
+      SharedMediaFile(text: null, path: 'path1', type: SharedMediaType.image),
+      SharedMediaFile(text: null, path: 'path2', type: SharedMediaType.video),
     ];
     final json =
         jsonEncode(expectedMediaFiles.map((file) => file.toMap()).toList());
@@ -46,8 +46,8 @@ void main() {
 
   test('getMediaStream', () async {
     final expectedMediaFiles = [
-      SharedMediaFile(path: 'path1', type: SharedMediaType.image),
-      SharedMediaFile(path: 'path2', type: SharedMediaType.video),
+      SharedMediaFile(text: null, path: 'path1', type: SharedMediaType.image),
+      SharedMediaFile(text: null, path: 'path2', type: SharedMediaType.video),
     ];
     final json =
         jsonEncode(expectedMediaFiles.map((file) => file.toMap()).toList());

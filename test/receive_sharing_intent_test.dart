@@ -8,8 +8,8 @@ void main() {
 
   test('setMockValues', () async {
     final expectedMediaFiles = [
-      SharedMediaFile(path: 'path1', type: SharedMediaType.image),
-      SharedMediaFile(path: 'path2', type: SharedMediaType.video),
+      SharedMediaFile(text: null, path: 'path1', type: SharedMediaType.image),
+      SharedMediaFile(text: null, path: 'path2', type: SharedMediaType.video),
     ];
     final streamController =
         StreamController<List<SharedMediaFile>>.broadcast();
@@ -35,8 +35,8 @@ void main() {
     });
 
     final expectedMediaFilesStream = [
-      SharedMediaFile(path: 'path3', type: SharedMediaType.image),
-      SharedMediaFile(path: 'path4', type: SharedMediaType.video),
+      SharedMediaFile(text: null, path: 'path3', type: SharedMediaType.image),
+      SharedMediaFile(text: null, path: 'path4', type: SharedMediaType.video),
     ];
     streamController.add(expectedMediaFilesStream);
     await Future.delayed(Duration.zero); // Allow stream to process

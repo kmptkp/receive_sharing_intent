@@ -1,9 +1,12 @@
 part of receive_sharing_intent;
 
 class SharedMediaFile {
-  /// Shared file path, url or the text
+
+  final String? text;
+
+  /// Shared file path or url
   /// NOTE. All files are copied to a temp cache folder
-  final String path;
+  final String? path;
 
   /// Video thumbnail
   final String? thumbnail;
@@ -22,6 +25,7 @@ class SharedMediaFile {
   final String? message;
 
   SharedMediaFile({
+    required this.text,
     required this.path,
     required this.type,
     this.thumbnail,
@@ -32,6 +36,7 @@ class SharedMediaFile {
 
   SharedMediaFile.fromMap(Map<String, dynamic> json)
       : path = json['path'],
+        text = json['text'],
         thumbnail = json['thumbnail'],
         duration = json['duration'],
         type = SharedMediaType.fromValue(json['type']),
@@ -40,6 +45,7 @@ class SharedMediaFile {
 
   Map<String, dynamic> toMap() {
     return {
+      'text': text,
       'path': path,
       'thumbnail': thumbnail,
       'duration': duration,
